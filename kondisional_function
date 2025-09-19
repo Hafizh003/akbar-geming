@@ -1,0 +1,138 @@
+#include <string>
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+// celcius
+// kode konversi R,f,K
+void celcius(){
+    double c;
+    char konversi;
+    double reamur, fahrenheit, kelvin;
+
+
+    cout << "masukkan nilai celcius: ";
+    cin >> c;
+
+    do{
+    cout << "masukkan kode konversi: ";
+    cin >> konversi;
+    if(toupper(konversi) == 'R'){
+        reamur  = 0.8 * c;
+        cout << "nilai konversi ke reamur adalah: "<< reamur << endl;
+    } else if(toupper(konversi) == 'F'){
+        fahrenheit = ((c*1.8) +32);
+        cout << "nilai konversi ke fahrenheit adalah: "<< fahrenheit << endl;
+    } else{
+        kelvin = c + 273.15;
+        cout << "nilai konversi ke fahrenheit adalah: "<< kelvin << endl;
+    }
+}while(toupper(konversi) != 'Q');
+ cout << "======thanks======" << endl;
+}
+
+
+
+void ubahSuhu(){
+    int celcius;
+    int konversi;
+    
+
+    do{
+        cout << "Masukkan suhu: ";
+        cin >> celcius;
+
+        if(celcius < 0){
+            cout << "beku" << endl;
+        } else if(celcius > 0 && celcius  < 100 ){
+            cout << "cair" << endl;
+        } else {
+            cout << "uap" << endl;
+        }
+
+    }while(toupper(konversi) != 'Q');
+}
+
+    void segitiga(){
+        int a, b, c;
+        char cek;
+
+
+        do{
+        cout << "masukkan 3 angka " << endl;
+        cout << "a : "; cin >> a;
+        cout << "b : "; cin >> b;
+        cout << "c : "; cin >> c;
+    
+        if(a == b == c){
+            cout << "sama sisi" << endl;
+        } else if(a == b || b == c || a == c){
+            cout << "sama kaki" << endl;
+
+        }else {
+            cout << "sembarang" << endl;
+        }
+
+         cout << "masukkan N/Y: ";
+        cin >> cek;
+
+        }while(toupper(cek) != 'N');
+    }
+
+    void hitungAkar(){
+        int a, b, c;
+        double akar1, akar2;
+        double D;
+        double temp;
+
+        cout << "maukkan 3 angka" << endl;
+        cout << "masukkan a: ";
+        cin >> a;
+        cout << "masukkan b: ";
+        cin >> b;
+        cout << "masukkan c: ";
+        cin >> c;
+
+        if(a == 0){
+            cout << "invalid -999" << endl;
+        } else {
+
+        D  = (pow(b, 2) - (4*a*c));
+
+        if(D < 0){
+            cout << "invalid -999" << endl;
+        } else {
+
+        akar1 = (-b + sqrt(D)) / (2 * a);
+        akar2 = (-b - sqrt(D)) / (2 * a);
+        cout << " nilai akar 1 : " << akar1 << endl;
+        cout << " nilai akar 2 : " << akar2 << endl;
+        double akarkecil = min(akar1, akar2); 
+        double akarbesar = max(akar1, akar2);
+            
+
+
+        if(akar1 == akar2){
+            cout << "sama" << " " << akar1 <<" = " << akar2 << endl;
+        } else if(akarkecil == 0){
+
+            cout << "akar kecil == 0" << endl;
+        } else {
+            
+            temp = akarbesar / akarkecil;
+            cout << "nilai temp: " << temp << endl;
+            
+        }
+    }
+        }
+    }
+
+int main(){
+    //celcius();
+    //ubahSuhu();
+     //segitiga();
+
+    hitungAkar();
+
+    }
